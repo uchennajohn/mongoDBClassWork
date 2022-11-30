@@ -84,7 +84,8 @@ const removeTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         const id = req.params.id;
         const removedtodo = yield todoModel_1.default.findOneAndDelete({ "_id": id });
         return res.status(200).json({
-            message: "deleted successfully"
+            message: "deleted successfully",
+            removedtodo
         });
         return res.status(400).json({
             message: "unidentified data"

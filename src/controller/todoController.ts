@@ -69,7 +69,8 @@ export const removeTodo = async (req:Request, res:Response) => {
         const id = req.params.id;
         const removedtodo = await Todo.findOneAndDelete({"_id": id})
         return res.status(200).json({
-           message: "deleted successfully"
+           message: "deleted successfully",
+           removedtodo
         })
         return res.status(400).json({
             message: "unidentified data"
